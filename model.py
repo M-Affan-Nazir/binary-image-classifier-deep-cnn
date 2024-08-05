@@ -16,7 +16,7 @@ def imageAugmentation():
     trainingDataset = AugmentationGeneratorForTraining.flow_from_directory("./dataset/training/",
                                                                 target_size = (64,64),   #all images will be resized to 64 by 64 pixels.
                                                                 batch_size=32,
-                                                                class_mode="binary")  #output is either cat or dog; so binary (1,0) seems good
+                                                                class_mode="binary")  #output is either cancer or non-cancer; so binary (1,0) seems good
     
     AugmentationGeneratorForTesting = ImageDataGenerator(rescale=1./255)
     testingDataset = AugmentationGeneratorForTesting.flow_from_directory("./dataset/test",
